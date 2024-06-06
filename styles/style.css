@@ -12,11 +12,12 @@ html {
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
+  display: flex;
+  justify-content: center;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
-  display: grid;
 }
 
 h1,
@@ -41,7 +42,7 @@ ol {
 .content {
   display: flex;
   align-items: flex-end;
-  width: 100%;
+  width: 1140px;
   gap: 30px;
   margin: auto;
 }
@@ -53,6 +54,7 @@ ol {
   color: #fff;
   font-weight: 700;
   font-size: 18px;
+  font-family: inherit;
   line-height: 1.2;
   height: 34px;
 }
@@ -75,20 +77,17 @@ ol {
 }
 
 .result {
-  width: 711px;
+  inline-size: 711px;
 }
 
 .result__video-container {
   position: relative;
   width: 100%;
   height: 386px;
-  margin-bottom: 16px;
+  margin-block-end: 16px;
 }
 
 .result__video {
-  position: absolute;
-
-  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -109,6 +108,7 @@ ol {
 .search-form__label {
   display: flex;
   width: fit-content;
+  align-items: center;
 }
 
 .search-form__fieldset-title {
@@ -123,9 +123,8 @@ ol {
   -moz-appearance: none;
   appearance: none;
   padding-left: 0;
-  min-width: 255px;
-  height: 27px;
-
+  width: 225px;
+  min-height: 27px;
   background-color: transparent;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
@@ -141,16 +140,12 @@ ol {
   outline: none;
 }
 
-.search-form__label:has(:focus) {
-  outline: none;
-}
-
 .search-form__label:has(:focus-visible) {
   outline: 1px solid #fff;
   outline-offset: 1px;
 }
 
-.search-form__label:has(input[type="checkbox"]):hover {
+.search-form__label:has(.search-form__label-text):hover {
   text-decoration: underline;
 }
 
@@ -159,7 +154,7 @@ ol {
   gap: 15px;
 }
 
-.search-form__checkbox-list .search-form__label {
+.search-form__label {
   cursor: pointer;
   line-height: 1.2;
 }
@@ -195,7 +190,7 @@ ol {
   font-weight: 700;
   line-height: 0.94;
   text-transform: uppercase;
-  margin-bottom: 26px;
+  margin-bottom: 22px;
 }
 
 .content__accent {
@@ -205,7 +200,7 @@ ol {
 .content__list {
   position: relative;
   block-size: 298px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .content__list-item:not(:last-child) {
@@ -221,13 +216,13 @@ ol {
 .content__video-card-description-container {
   flex-grow: 1;
   padding: 2px;
+  max-height: 65px;
 }
 
 .content__card-link {
   display: block;
   text-decoration: none;
   color: #fff;
-  margin: 2px;
 }
 
 .content__card-link_current {
@@ -248,18 +243,21 @@ ol {
   outline: none;
 }
 
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
 .content__video-card-title {
   font-size: 30px;
   font-weight: 700;
   line-height: 30px;
   text-transform: uppercase;
   margin-bottom: 6px;
-}
-
-
-.content__card-link:focus-visible {
-  outline: 1px solid #fff;
-  outline-offset: 1px;
+  text-overflow: ellipsis;   
+  white-space: nowrap;   
+  overflow: hidden;
+  max-width: 200px;
 }
 
 .content__video-card-description {
