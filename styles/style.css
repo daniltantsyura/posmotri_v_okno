@@ -14,6 +14,7 @@ html {
   margin: auto;
   display: flex;
   justify-content: center;
+  align-items: center;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
@@ -145,7 +146,7 @@ ol {
   outline-offset: 1px;
 }
 
-.search-form__label:has(.search-form__label-text):hover {
+.search-form__label:hover .search-form__label-text {
   text-decoration: underline;
 }
 
@@ -216,7 +217,7 @@ ol {
 .content__video-card-description-container {
   flex-grow: 1;
   padding: 2px;
-  max-height: 65px;
+  max-width: 200px;
 }
 
 .content__card-link {
